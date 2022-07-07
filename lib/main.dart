@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:gradient_textfield/gradient_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter/services.dart';
@@ -15,7 +15,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String result = "Press Scan";
+  String result = "Press the Scan button below!!";
+
+  get name => null;
   Future _scanQR() async {
     try {
       String qrResult = await FlutterBarcodeScanner.scanBarcode(
@@ -41,12 +43,28 @@ class _HomePageState extends State<HomePage> {
     ThemeData.dark();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Scan-ME"),
+        title: Text("SCAN-ME"),
+        centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          result,
-          style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Gradienttextfield(
+              controller: name,
+              radius: 40,
+              height: 60,
+              width: 400,
+              colors: const [
+                Color.fromARGB(255, 167, 209, 238),
+                Color.fromARGB(255, 93, 190, 242)
+              ],
+              text: result,
+              fontColor: Colors.black,
+              fontSize: 15,
+              fontWeight: FontWeight.normal,
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
