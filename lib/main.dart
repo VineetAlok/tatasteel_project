@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:gradient_textfield/gradient_textfield.dart';
+/*import 'package:gradient_textfield/gradient_textfield.dart';*/
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter/services.dart';
@@ -43,26 +44,23 @@ class _HomePageState extends State<HomePage> {
     ThemeData.dark();
     return Scaffold(
       appBar: AppBar(
-        title: Text("SCAN-ME"),
+        title: Text("TATA-SCAN"),
         centerTitle: true,
       ),
-      body: Container(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Gradienttextfield(
-              controller: name,
-              radius: 40,
-              height: 60,
-              width: 400,
+            GradientText(
+              result,
+              style: const TextStyle(
+                fontSize: 40.0,
+              ),
               colors: const [
-                Color.fromARGB(255, 167, 209, 238),
-                Color.fromARGB(255, 93, 190, 242)
+                Colors.blue,
+                Colors.red,
+                Colors.teal,
               ],
-              text: result,
-              fontColor: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.normal,
             ),
           ],
         ),

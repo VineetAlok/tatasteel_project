@@ -109,13 +109,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  gradient_textfield:
-    dependency: "direct main"
-    description:
-      name: gradient_textfield
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.1"
   image:
     dependency: transitive
     description:
@@ -158,6 +151,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.0"
+  simple_gradient_text:
+    dependency: "direct main"
+    description:
+      name: simple_gradient_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -235,4 +235,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.17.3 <3.0.0"
-  flutter: ">=2.0.0"
+  flutter: ">=2.5.0"
